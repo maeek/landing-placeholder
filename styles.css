@@ -1,0 +1,104 @@
+:root {
+  --bg: #2B3036;
+  --child-bg: #343A43;
+  --main-color: #B0B0B0;
+  --child-color: #BCBCBC;
+  --focus-ring: #267ce0;
+}
+
+*,
+*::after,
+*::before {
+    box-sizing: border-box;
+}
+
+
+html {
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+}
+
+body {
+  height: 100vh;
+  width: 100vw;
+  overflow: auto;
+  margin: 0;
+  padding: 0;
+  background-color: var(--bg);
+  color: var(--main-color);
+  font-family: "Roboto", "Helvetica Neue", -apple-system, BlinkMacSystemFont, Helvetica, Ubuntu, Roboto, Noto, "Segoe UI", Arial, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.full-bg {
+  position: fixed;
+  height: 100vh;
+  width: 100vw;
+  z-index: -1;
+  background-image: url(assets/bg--dark.jpg);
+  background-size: cover;
+  opacity: 0.1;
+}
+
+.content {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+.container {
+  max-width: 500px;
+  margin: 15% 0 0;
+}
+
+.call-to-action {
+  width: 100%;
+  padding: 0.5rem 1rem;
+  background-color: var(--child-bg);
+  border: 2px solid transparent;
+  border-radius: 3px;
+  color: inherit;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  outline: none;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  transition: transform 0.2s;
+}
+
+.call-to-action:hover, .call-to-action:focus {
+  border: 2px solid var(--focus-ring);
+}
+
+.call-to-action:active {
+  transform: scale(1.02);
+}
+
+.call-to-action svg {
+  width: 18px;
+  height: 18px;
+  margin-right: 0.4rem;
+}
+
+.call-to-action span {
+  font-size: 0.9rem;
+  font-size: 0.9rem;
+}
+
+h1 {
+  margin: 0;
+  font-family: 'Roboto Slab', 'Times New Roman', Times, serif;
+}
+
+h3 {
+  margin: 0.5rem 0 2rem;
+  font-size: 1rem;
+  color: var(--child-color);
+  font-weight: 400;
+}
