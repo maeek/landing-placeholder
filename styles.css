@@ -104,3 +104,10 @@ h3 {
   color: var(--child-color);
   font-weight: 400;
 }
+
+footer {
+  position: absolute;
+  bottom: 1rem;
+  right: 1rem;
+  font-size: 0.8rem;
+}
