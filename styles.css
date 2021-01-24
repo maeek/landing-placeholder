@@ -1,9 +1,11 @@
 :root {
   --bg: #2B3036;
   --child-bg: #343A43;
+  --child-bg-w-opacity: rgba(52, 58, 67, 0.6);
   --main-color: #B0B0B0;
   --child-color: #BCBCBC;
   --focus-ring: #267ce0;
+  --focus-ring-highlighted: #368bed;
 }
 
 *,
@@ -37,9 +39,10 @@ body {
   height: 100vh;
   width: 100vw;
   z-index: -1;
-  background-image: url(assets/bg--dark.jpg);
+  background-image: url(assets/sky.jpg);
   background-size: cover;
-  opacity: 0.1;
+  background-position: bottom right;
+  opacity: 0.2;
 }
 
 .content {
@@ -47,22 +50,40 @@ body {
   height: 100%;
   padding: 2rem;
   display: flex;
-  justify-content: center;
+  flex-direction: column;
+  justify-content: flex-start;
   align-items: center;
 }
 
 .container {
-  max-width: 500px;
-  margin-top: -5rem;
+  max-width: 560px;
+  margin-top: 10rem;
 }
+/* 
+.cards {
+  margin: 4rem 0;
+  max-width: 650px;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-start;
+}
+
+.project {
+  border-radius: 8px;
+  padding: 0.8rem 0.6rem;
+  background-color: var(--child-bg);
+} */
 
 .call-to-action {
   width: 100%;
   padding: 0.5rem 1rem;
-  background-color: var(--child-bg);
+  background-color: var(--focus-ring);
   border: 2px solid transparent;
   border-radius: 3px;
-  color: inherit;
+  color: #fff;
+  font-weight: 900;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -75,7 +96,7 @@ body {
 }
 
 .call-to-action:hover, .call-to-action:focus {
-  border: 2px solid var(--focus-ring);
+  background-color: var(--focus-ring-highlighted);
 }
 
 .call-to-action:active {
@@ -95,19 +116,59 @@ body {
 
 h1 {
   margin: 0;
+  font-size: 3.5rem;
   font-family: 'Roboto Slab', 'Times New Roman', Times, serif;
+  display: flex;
+  align-items: flex-end;
+  justify-content: flex-start;
 }
 
-h3 {
-  margin: 0.5rem 0 2rem;
+p {
+  margin: 2rem 0 3rem;
   font-size: 1rem;
+  line-height: 1.8rem;
   color: var(--child-color);
   font-weight: 400;
 }
 
+/* h4 {
+  margin: 0;
+} */
+
 footer {
-  position: absolute;
-  bottom: 1rem;
-  right: 1rem;
+  /* position: absolute; */
+  /* bottom: 1rem; */
+  /* right: 1rem; */
+  width: 100%;
+  /* align-self: ; */
+  text-align: right;
+  margin: 1rem 0;
   font-size: 0.8rem;
+}
+
+.point-of-contact {
+  text-align: center;
+  margin-top: 1rem;
+  font-size: 0.9rem;
+  cursor: default;
+}
+
+@keyframes blink {
+  50% {
+    opacity: 0;
+  }
+}
+
+.cursor {
+  display: inline-block;
+  width: 10px;
+  margin-left: 0.4rem;
+  margin-bottom: 0.2rem;
+  height: 3.8rem;
+  background-color: var(--focus-ring);
+  animation: blink 1s step-start 0s infinite;
+}
+
+a {
+  color: var(--focus-ring);
 }
